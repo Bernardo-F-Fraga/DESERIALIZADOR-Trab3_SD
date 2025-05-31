@@ -1,7 +1,7 @@
 /*
 
 fila:
-        - é um container limitado do tipo LIFO de 8 bits;
+        - é um container limitado do tipo FIFO de 8 bits;
         - elementos são inserdos através do data_in e enqueue_in;
         - elementos são removidos através do data_out e dequeue_in;
         - o sinal len_out de 8 bits que indica o nº de elementos da fila;
@@ -30,7 +30,7 @@ module queue(
     output logic len_out
 );
 
-typedef enum logic [1:0] {ENQ, DEQ, FULL}
+typedef enum logic [1:0] {ENQ, DEQ}
 
 
 always @(posedge clock or posedge reset) begin
